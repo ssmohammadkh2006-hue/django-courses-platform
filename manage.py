@@ -20,3 +20,12 @@ def main():
 
 if __name__ == '__main__':
     main()
+from django.contrib.auth.models import User
+
+try:
+    user = User.objects.get(username='admin')
+    user.set_password('123456789')  # حط الباسورد الجديد
+    user.save()
+    print("Password changed successfully")
+except:
+    print("User not found")
