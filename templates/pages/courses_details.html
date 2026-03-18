@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+<!-- cousrse details-->
+<div class="container mt-5 mb-5">
+<div class="row">
+
+<!-- Course Image -->
+<div class="col-lg-5 mb-4">
+<div class="course-image">
+<img src="{{ course.images.url }}" class="img-fluid" alt="course image" style="width: 450px;">
+</div>
+</div>
+<!-- Course Info -->
+<div class="col-lg-7">
+<div class="course-info">
+<h2 class="course-title">
+{{ course.name_courses }}
+</h2>
+<p class="course-description">
+
+{{ course.about_courses }}
+
+</p>
+
+<div class="course-meta">
+
+<p><strong>Instructor:</strong> {{ course.instructor }}</p>
+
+<p><strong>Lessons:</strong> {{ course.lessons }}</p>
+
+<p><strong>Duration:</strong>  {{ course.duration }}</p>
+
+<p><strong>Level:</strong> {{ course.level }}</p>
+</div>
+<a href="https://wa.me/962782064961" class="btn enroll-btn" target="_blank">
+  Participation in the course
+</a>
+</div>
+</div>
+</div>
+
+<div class="container mt-5 ">
+  <div class="card shadow-lg border-0 rounded-4 p-4 text-center">
+    
+    <h4 class="mb-3 text-primary">
+      Important Note
+    </h4>
+    
+    <h5 class="text-muted mb-0">
+    You should carefully study and fully understand all the content provided above in this course.
+   Take your time to go through each lesson step by step, and do not rush the learning process.
+   Make sure to review the material regularly, practice what you learn, and apply the concepts in real 
+   projects whenever possible.
+
+    Consistency is the key to success, so try to dedicate time every day to improve your skills.
+    If you face any difficulties, revisit the lessons and focus on understanding the core ideas.
+     By staying committed and practicing continuously,
+    you will build strong knowledge and become more confident in your abilities.
+    </h5>
+
+  </div>
+</div>
+</div>
+<!-- cousrse details-->
+
+
+{% endblock %}

@@ -1,0 +1,414 @@
+ 
+
+
+
+body{
+    font-family: sans-serif;
+    background-color: rgb(40, 65, 66);
+     transition: 0.6s;
+}
+/* home home home -----------------------------------*/
+
+/* navbar -----------------------------------------------------------*/
+.navbar {
+   background: linear-gradient(135deg,#248a50, #16aaa8);
+    perspective: 500px;
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+}
+/* جعل العناصر في المنتصف */
+.navbar-nav{
+    margin: auto;
+}
+/* مسافة بين العناصر */
+.navbar .nav-item{
+    margin: 0 15px;
+}
+/* اسم الموقع */
+.navbar .navbar-brand{
+    color: white !important;
+    font-size: 35px;
+    transition: 0.4s;
+}
+/* hover متعدد الألوان */
+.navbar .navbar-brand:hover{
+    background: linear-gradient(135deg,#ffd700,#863c3c,#e3141e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-5px) scale(1.05);
+}
+/* زر الموبايل */
+.navbar-toggler{
+    border-color: white !important;
+}
+/* لون الروابط */
+.navbar .nav-link{
+    color: white !important;
+    font-size: 30px;
+    transition: 0.6s;
+}
+/* hover */
+.navbar .nav-link:hover{
+    color: #000000 !important;
+    transform: translateY(-5px) scale(1.05);
+    text-decoration: underline;
+}
+.navbar .btn{
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color:white;
+    color: #000000;
+    transition: 0.6s;
+}
+/* hover */
+.navbar .btn:hover{
+   background-color: #000000;
+   color: white;
+    transform: translateY(-5px) scale(1.05);
+
+}
+/* navbar -------------------------------------------------------*/
+
+/* jumbotron --------------------------------------------------*/
+.jumbotron{
+    background-color: rgb(40, 65, 66);
+    color: white;
+    box-shadow:white 3px 3px 6px 10px;
+    border-radius: 15px;
+    transition: 0.6s;
+}
+.jumbotron:hover{
+     transform: translateY(-5px) scale(1.02);
+}
+.my-btn{
+    background: linear-gradient(135deg,#248a50, #41be0b);
+    color:white;
+    border:none;
+    transition: 0.6s; 
+}
+.my-btn:hover{
+    background: linear-gradient(135deg,#248a50, #16aaa8);
+}
+/* jumbotron ---------------------------------------------------*/
+  
+/* carousel ---------------------------------------------------*/
+.carousel-item img{
+    height:500px;
+    object-fit:cover;
+    border-radius: 10px;
+    transition: 0.6s;
+}
+.carousel-item img:hover{
+    transform: translateY(-5px) scale(1.02);
+}
+/* carousel --------------------------------------------------*/
+
+/*feature-box -----------------------------------------------*/
+.feature-box{
+background:#ffffff;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(216, 200, 200, 0.08);
+transition:all 0.3s ease;
+}
+.feature-box:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(244, 242, 242, 0.555);
+}
+/*feature-box -----------------------------------------------*/
+
+/* footer -----------------------------------*/
+footer{
+    background: linear-gradient(135deg,#248a50, #16aaa8);
+}
+/* footer -----------------------------------*/
+
+/* home home home -----------------------------------*/
+
+
+
+/*courses  courses courses-------------------------------------------------------*/
+
+/*card -------------------------------------------------------*/
+.card{
+    transition: 0.6s;
+}
+.card:hover{
+    transform: translateY(-5px) scale(1.02);
+}
+/*card -------------------------------------------------------*/
+
+/* platform-box -------------------------------------------------------*/
+.platform-box{
+background:#ffffff;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(228, 214, 214, 0.08);
+transition:0.6s;
+font-size:20px;
+line-height:1.7;
+}
+.platform-box:hover{
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:0 12px 30px 10px rgba(255, 253, 253, 0.15);
+}
+/* platform-box -------------------------------------------------------*/ 
+/*courses  courses courses-------------------------------------------------------*/
+
+
+
+
+
+/* my courses my courses my courses -----------------------------------------*/
+/* dashboard my courses --------------------------*/
+.dashboard-box{
+background:#ffffff;
+border-radius:12px;
+/* ظل احترافي */
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+.dashboard-title{
+font-weight:600;
+}
+.dashboard-text{
+max-width:850px;
+margin:auto;
+font-size:18px;
+color:#000000;
+line-height:1.7;
+}
+/* dashboard my courses --------------------------*/
+
+/* video --------------------------------------*/
+.video-container{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+.lesson-list{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+max-height:80vh;
+overflow-y:auto;
+}
+.lesson-item{
+padding:20px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+.lesson-item:hover{
+    background:#6b9dce;
+    transform: translateY(-5px) scale(1.02);
+}
+.lesson-active{
+background:#e9f2ff;
+font-weight:600;
+}
+/* video --------------------------------------*/
+
+.lesson-buttons{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:10px;
+}
+/* شكل الأزرار ------------------------------------------*/
+.btn-lesson{
+flex:1;
+min-width:140px;
+padding:10px 15px;
+font-weight:500;
+border-radius:8px;
+transition:all 0.3s ease;
+}
+/* زر السابق */
+.prev-btn{
+background:#f1f3f5;
+border:1px solid #dee2e6;
+color:#333;
+transition: 0.6s;
+}
+.prev-btn:hover{
+background:#a8b8c7;
+}
+/* زر التنزيل */
+.download-btn{
+background:#e8f5e9;
+border:1px solid #c8e6c9;
+color:#2e7d32;
+transition: 0.6s;
+}
+.download-btn:hover{
+background:#baf2bf;
+}
+/* زر التالي */
+.next-btn{
+background:linear-gradient(135deg,#248a50,#16aaa8);
+border:none;
+color:white;
+}
+.next-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+/* شكل الأزرار ---------------------------------------------*/
+ 
+/*  learing note  ---------------------------------------------*/
+.learning-note{
+background:#ffffff;
+padding:20px;
+max-width: 90%;
+margin:auto;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+border-left:5px solid #17ff07;
+border-right:5px solid #17ff07;
+transition: 0.6s;
+}
+.learning-note:hover{
+    transform: translateY(-5px) scale(1.02);
+}
+.learning-note h4{
+font-weight:700;
+margin-bottom:10px;
+}
+.learning-note p{
+color:#000000;
+font-size:19px;
+line-height:1.7;
+}
+/*  learing note  ---------------------------------------------*/
+
+/* my courses my courses my courses -----------------------------------------*/
+
+/*cousrse details // cousrse details //cousrse details -------------------------------------*/
+/* course image */
+.course-image img{
+border-radius:12px;
+box-shadow:0 6px 20px rgba(237, 234, 234, 0.1);
+}
+/* course info */
+.course-info{
+background:#ffffff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+.course-title{
+font-weight:700;
+margin-bottom:15px;
+}
+.course-description{
+color:#000000;
+font-size:17px;
+line-height:1.7;
+}
+.course-meta p{
+margin-bottom:6px;
+}
+/* enroll button */
+.enroll-btn{
+background:#28a745;
+color:white;
+padding:10px 25px;
+font-weight:600;
+margin-top:10px;
+border-radius:8px;
+transition:0.3s;
+}
+.enroll-btn:hover{
+background:#218838;
+transform:translateY(-4px);
+}
+/* course content */
+.course-content{
+background:#ffffff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+.lesson-list{
+list-style:none;
+padding:0;
+}
+.lesson-list li{
+padding:10px;
+border-bottom:1px solid #eee;
+}
+.lesson-list li:last-child{
+border-bottom:none;
+}
+
+
+/* login login ----------------------------------------------*/
+/* الحاوية التي توسط الصفحة */
+.login-wrapper{
+    background: linear-gradient(135deg,#248a50, #16aaa8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* صندوق تسجيل الدخول */
+.login-card{
+    background: rgba(255,255,255,0.95);
+    padding:40px;
+    width:100%;
+    max-width:420px;
+    border-radius:18px;
+    box-shadow:0 15px 10px 10px rgba(0,0,0,0.3);
+    transition: 0.6s;
+}
+
+.login-card:hover{
+    transform: translateY(-5px) scale(1.02); 
+    
+}
+/* العنوان */
+.login-title{
+    text-align:center;
+    margin-bottom:25px;
+    font-weight:700;
+    color:#1b5e20;
+}
+
+/* الحقول */
+.form-control{
+    height:45px;
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+
+/* زر تسجيل الدخول */
+.btn-login{
+    background:#1b5e20;
+    color:white;
+    height:45px;
+    border-radius:10px;
+    font-weight:600;
+}
+
+.btn-login:hover{
+    background:#144d1a;
+    color:white;
+}
+
+/* رابط التسجيل */
+.register-link{
+    text-align:center;
+    margin-top:15px;
+}
+
+.register-link a{
+    color:#1b5e20;
+    font-weight:600;
+}
+
+/* login login ----------------------------------------------*/

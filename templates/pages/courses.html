@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<!--jumbotron-->
+<div class="container">
+    <div class="jumbotron mt-5 bg-dark" >
+        <h2 class="text-center ">Welcome to our learning platform. 
+          Here you will find a variety of courses created to help you
+          improve your knowledge, develop new skills, 
+          and achieve your personal and professional goals &#8595</h2>
+         
+    </div>
+</div>
+
+<!--container card///////////////////////////////////////-->
+<div class="container">
+  <div class="row">
+
+    {% for course in courses %}
+    <div class="col-md-4 d-flex">
+  <div class="card m-3 w-100 d-flex flex-column">
+
+    <img class="card-img-top" src="{{ course.images.url }}" style="height:200px; ">
+
+    <div class="card-body d-flex flex-column">
+      <h3 class="card-title">{{ course.name_courses }}</h3>
+
+      <p class="card-text">
+        {{ course.about_courses }}
+      </p>
+       
+      <a href="{% url 'courses_details' course.id %}" class="btn btn-primary mt-auto">
+        Learn more
+      </a> 
+      </div>
+   </div>
+  </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+    
+     
+
+
+  </div>
+</div>
+<!--end card-->
+
+
+<!-- Platform Message -->
+<div class="container mt-5 mb-5">
+  <div class="platform-box text-center p-4">
+
+    <h3 class="mb-3">
+      <i class="fas fa-graduation-cap text-success"></i> Learn From the Best
+    </h3>
+
+    <p>
+      Our platform brings together high-quality courses created by experienced instructors 
+      who are passionate about teaching. With structured lessons, practical examples, 
+      and modern learning tools, you can build real skills, grow your knowledge, 
+      and achieve your academic and professional goals in one trusted learning environment.
+    </p>
+
+  </div>
+</div>
+{% endblock content %}

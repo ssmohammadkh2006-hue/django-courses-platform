@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- My Courses Header -->
+<div class="container mt-4 mb-4">
+  <div class="dashboard-box text-center p-4 rounded">
+
+    <h2 class="dashboard-title mb-3">
+      <i class="fas fa-book-open text-success"></i> My Learning Dashboard
+    </h2>
+
+    <p class="dashboard-text">
+      Welcome to your personal learning dashboard. Here you will find all the courses and lessons
+      you are currently enrolled in. Continue your learning journey, track your progress,
+      and explore each lesson step by step to build your knowledge and improve your practical skills.
+    </p>
+
+  </div>
+</div>
+
+
+<!-- PROGRESS BAR completed -->
+<div class="progress m-4 mb-4">
+<div class="progress-bar bg-success" style="width: {{ progress }}%;">
+{{ progress }}% Completed
+</div>
+</div>
+<!-- PROGRESS BAR completed -->
+
+<!-- VIDEO SECTION -->
+<div class="container-fluid mt-4 mb-4">
+  
+
+<div class="row">
+
+<!-- VIDEO -->
+<div class="col-lg-8 mb-4">
+
+<div class="video-container  ">
+ 
+
+<h4 class="mb-3">{{ current_lesson.title }}</h4>
+
+<!-- VIDEO PLAYER -->
+<div class="ratio ratio-21x9">
+<video controls class="w-100" controlsList="nodownload">
+<source src="{{ current_lesson.video.url }}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<!-- LESSON DESCRIPTION -->
+<div class="mt-3">
+
+<h5>{{ current_lesson.description }}</h5>
+
+</div>
+
+ 
+
+ 
+
+<!-- NAVIGATION BUTTONS -->
+<div class="lesson-buttons mt-4">
+
+    {% if prev_lesson %}
+          <a href="?lesson={{ prev_lesson.id }}" class="btn btn-lesson prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous
+          </a>
+    {% endif %}
+ 
+
+          {% if next_lesson %}
+          <a href="?lesson={{ next_lesson.id }}" class="btn btn-lesson next-btn">
+            Next <i class="fas fa-arrow-right"></i>
+          </a>
+          {% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- COURSE LESSONS -->
+<div class="col-lg-4">
+
+<div class="lesson-list">
+
+<h3 class="mb-3 pt-2 pl-2">Course Content</h3>
+
+        {% for lesson in lessons %}
+        <a href="?lesson={{ lesson.id }}"
+           class="lesson-item d-block p-2 {% if lesson.id == current_lesson.id %}lesson-active{% endif %}">
+           
+          ▶ {{ lesson.title }}
+          <small>({{ lesson.duration }})</small>
+
+        </a>
+        {% endfor %}
+
+ 
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Learning Notice -->
+<div class="learning-note mt-4 mb-5">
+<h4>
+<i class="fas fa-lightbulb text-warning"></i>
+Learning Tip
+</h4>
+<p>
+For the best learning experience, please make sure to fully watch and understand
+the current lesson before moving to the next one. Each lesson builds on the
+previous concepts, so completing them in order will help you gain the maximum
+benefit from this course.
+</p>
+<p>
+You can also download the lesson resources and practice the examples shown in
+the video to strengthen your understanding and improve your practical skills.
+</p>
+</div>
+{% endblock %}

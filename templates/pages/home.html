@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+  
+
+
+<!--jumbotron-->
+<div class="container">
+    <div class="jumbotron mt-5" >
+        <h1 class="display-4 text-center">Learn Without Limits</h1>
+
+        <h4 class="text-center">Welcome to our educational platform, where learning becomes simple, interactive, and accessible 
+            for everyone. Our mission is to provide students with high-quality courses, expert guidance, 
+            and modern learning tools that support skill development and academic success. Explore a wide 
+            range of subjects, gain practical knowledge, and advance your learning journey in a flexible 
+            and inspiring online environment.</h4>
+        <p class="lead text-center mt-3">
+           <a class="btn btn-light btn-lg my-btn" href="{%url 'courses' %}" role="button">Learn more</a>
+        </p>
+    </div>
+</div>
+<!--jumbotron-->
+
+
+<!-- Carousel -->
+<div class="container mt-5 mb-5">
+    <h2 class="text-center bg-light p-2 rounded mb-4">Special Offers</h2>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            {% for img in images %}
+                <li data-target="#carouselExampleIndicators"
+                    data-slide-to="{{ forloop.counter0 }}"
+                    class="{% if forloop.first %}active{% endif %}">
+                </li>
+            {% endfor %}
+        </ol>
+
+        <!-- Images -->
+        <div class="carousel-inner">
+            {% for img in images %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img class="d-block w-100"
+                         src="{{ img.image.url }}"
+                         style="height:400px; object-fit:cover;"
+                         alt="slide">
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+</div>
+<!-- End Carousel -->
+
+
+<!-- Platform Features -->
+<div class="container mt-5 mb-5">
+
+<h2 class="text-center mb-4">Why Learn With Us</h2>
+
+<div class="row text-center">
+
+<div class="col-md-4 mb-4">
+<div class="feature-box p-4">
+<i class="fas fa-chalkboard-teacher fa-3x text-success mb-3"></i>
+<h4>Expert Instructors</h4>
+<p>
+Learn from experienced teachers who provide clear explanations,
+practical examples, and real-world knowledge to help you understand
+every topic step by step.
+</p>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="feature-box p-4">
+<i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
+<h4>Practical Learning</h4>
+<p>
+Our courses focus on hands-on learning and real projects so you can
+apply what you learn immediately and build valuable skills for
+your academic and professional future.
+</p>
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+<div class="feature-box p-4">
+<i class="fas fa-graduation-cap fa-3x text-warning mb-3"></i>
+<h4>Flexible Education</h4>
+<p>
+Study anytime and anywhere through our interactive platform designed
+to make learning simple, accessible, and enjoyable for students of
+all levels, helping you learn at your own pace comfortably.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+
+{% endblock content %}
