@@ -1,414 +1,1008 @@
- 
+/* =========================================================
+   GOOGLE FONT
+=========================================================*/
+/*
+ضع هذا داخل <head>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+*/
 
 
+/* =========================================================
+   ROOT VARIABLES
+=========================================================*/
+:root{
+
+    --primary:#5eead4;
+    --primary-dark:#14b8a6;
+
+    --secondary:#38bdf8;
+
+    --dark:#071018;
+    --dark-light:#0f1722;
+
+    --white:#ffffff;
+
+    --text:#f8fafc;
+    --text-light:#cbd5e1;
+
+    --card-bg:rgba(255,255,255,0.06);
+
+    --border:rgba(255,255,255,0.08);
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+
+    --shadow-hover:
+    0 25px 50px rgba(0,0,0,0.45);
+
+    --radius:24px;
+
+}
+
+
+/* =========================================================
+   RESET
+=========================================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-    font-family: sans-serif;
-    background-color: rgb(40, 65, 66);
-     transition: 0.6s;
-}
-/* home home home -----------------------------------*/
 
-/* navbar -----------------------------------------------------------*/
-.navbar {
-   background: linear-gradient(135deg,#248a50, #16aaa8);
-    perspective: 500px;
+    font-family:'Inter',sans-serif;
+
+    background:
+    radial-gradient(circle at top left,#13202e,#081018 55%);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+=========================================================*/
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#081018;
+}
+
+::-webkit-scrollbar-thumb{
+    background:
+    linear-gradient(
+        180deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   GLOBAL ELEMENTS
+=========================================================*/
+section{
+    padding:90px 0;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+}
+
+.container{
+    position:relative;
+    z-index:2;
+}
+
+
+/* =========================================================
+   NAVBAR
+=========================================================*/
+.navbar{
+
+    background:rgba(5,10,15,0.7);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,0.05);
+
+    padding:18px 30px;
+
     position:sticky;
 
     top:0;
 
     z-index:1000;
+
+    transition:0.4s;
 }
-/* جعل العناصر في المنتصف */
+
 .navbar-nav{
-    margin: auto;
+    margin:auto;
 }
-/* مسافة بين العناصر */
+
 .navbar .nav-item{
-    margin: 0 15px;
+    margin:0 12px;
 }
-/* اسم الموقع */
+
 .navbar .navbar-brand{
-    color: white !important;
-    font-size: 35px;
-    transition: 0.4s;
+
+    color:var(--white) !important;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    transition:0.4s;
 }
-/* hover متعدد الألوان */
+
 .navbar .navbar-brand:hover{
-    background: linear-gradient(135deg,#ffd700,#863c3c,#e3141e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: translateY(-5px) scale(1.05);
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    transform:translateY(-3px);
 }
-/* زر الموبايل */
+
 .navbar-toggler{
-    border-color: white !important;
+
+    border:1px solid rgba(255,255,255,0.15) !important;
+
+    background:rgba(255,255,255,0.05);
 }
-/* لون الروابط */
+
 .navbar .nav-link{
-    color: white !important;
-    font-size: 30px;
-    transition: 0.6s;
-}
-/* hover */
-.navbar .nav-link:hover{
-    color: #000000 !important;
-    transform: translateY(-5px) scale(1.05);
-    text-decoration: underline;
-}
-.navbar .btn{
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    background-color:white;
-    color: #000000;
-    transition: 0.6s;
-}
-/* hover */
-.navbar .btn:hover{
-   background-color: #000000;
-   color: white;
-    transform: translateY(-5px) scale(1.05);
 
-}
-/* navbar -------------------------------------------------------*/
+    color:var(--text) !important;
 
-/* jumbotron --------------------------------------------------*/
-.jumbotron{
-    background-color: rgb(40, 65, 66);
-    color: white;
-    box-shadow:white 3px 3px 6px 10px;
-    border-radius: 15px;
-    transition: 0.6s;
-}
-.jumbotron:hover{
-     transform: translateY(-5px) scale(1.02);
-}
-.my-btn{
-    background: linear-gradient(135deg,#248a50, #41be0b);
-    color:white;
-    border:none;
-    transition: 0.6s; 
-}
-.my-btn:hover{
-    background: linear-gradient(135deg,#248a50, #16aaa8);
-}
-/* jumbotron ---------------------------------------------------*/
-  
-/* carousel ---------------------------------------------------*/
-.carousel-item img{
-    height:500px;
-    object-fit:cover;
-    border-radius: 10px;
-    transition: 0.6s;
-}
-.carousel-item img:hover{
-    transform: translateY(-5px) scale(1.02);
-}
-/* carousel --------------------------------------------------*/
+    font-size:17px;
 
-/*feature-box -----------------------------------------------*/
-.feature-box{
-background:#ffffff;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(216, 200, 200, 0.08);
-transition:all 0.3s ease;
-}
-.feature-box:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(244, 242, 242, 0.555);
-}
-/*feature-box -----------------------------------------------*/
+    font-weight:500;
 
-/* footer -----------------------------------*/
-footer{
-    background: linear-gradient(135deg,#248a50, #16aaa8);
-}
-/* footer -----------------------------------*/
+    position:relative;
 
-/* home home home -----------------------------------*/
-
-
-
-/*courses  courses courses-------------------------------------------------------*/
-
-/*card -------------------------------------------------------*/
-.card{
-    transition: 0.6s;
-}
-.card:hover{
-    transform: translateY(-5px) scale(1.02);
-}
-/*card -------------------------------------------------------*/
-
-/* platform-box -------------------------------------------------------*/
-.platform-box{
-background:#ffffff;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(228, 214, 214, 0.08);
-transition:0.6s;
-font-size:20px;
-line-height:1.7;
-}
-.platform-box:hover{
-    transform: translateY(-5px) scale(1.02);
-    box-shadow:0 12px 30px 10px rgba(255, 253, 253, 0.15);
-}
-/* platform-box -------------------------------------------------------*/ 
-/*courses  courses courses-------------------------------------------------------*/
-
-
-
-
-
-/* my courses my courses my courses -----------------------------------------*/
-/* dashboard my courses --------------------------*/
-.dashboard-box{
-background:#ffffff;
-border-radius:12px;
-/* ظل احترافي */
-    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-}
-.dashboard-title{
-font-weight:600;
-}
-.dashboard-text{
-max-width:850px;
-margin:auto;
-font-size:18px;
-color:#000000;
-line-height:1.7;
-}
-/* dashboard my courses --------------------------*/
-
-/* video --------------------------------------*/
-.video-container{
-background:white;
-padding:20px;
-border-radius:20px;
-box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-}
-.lesson-list{
-background:white;
-padding:20px;
-border-radius:20px;
-box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-max-height:80vh;
-overflow-y:auto;
-}
-.lesson-item{
-padding:20px;
-border-radius:6px;
-cursor:pointer;
-transition:0.3s;
-}
-.lesson-item:hover{
-    background:#6b9dce;
-    transform: translateY(-5px) scale(1.02);
-}
-.lesson-active{
-background:#e9f2ff;
-font-weight:600;
-}
-/* video --------------------------------------*/
-
-.lesson-buttons{
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:10px;
-}
-/* شكل الأزرار ------------------------------------------*/
-.btn-lesson{
-flex:1;
-min-width:140px;
-padding:10px 15px;
-font-weight:500;
-border-radius:8px;
-transition:all 0.3s ease;
-}
-/* زر السابق */
-.prev-btn{
-background:#f1f3f5;
-border:1px solid #dee2e6;
-color:#333;
-transition: 0.6s;
-}
-.prev-btn:hover{
-background:#a8b8c7;
-}
-/* زر التنزيل */
-.download-btn{
-background:#e8f5e9;
-border:1px solid #c8e6c9;
-color:#2e7d32;
-transition: 0.6s;
-}
-.download-btn:hover{
-background:#baf2bf;
-}
-/* زر التالي */
-.next-btn{
-background:linear-gradient(135deg,#248a50,#16aaa8);
-border:none;
-color:white;
-}
-.next-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 6px 15px rgba(0,0,0,0.15);
-}
-/* شكل الأزرار ---------------------------------------------*/
- 
-/*  learing note  ---------------------------------------------*/
-.learning-note{
-background:#ffffff;
-padding:20px;
-max-width: 90%;
-margin:auto;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-border-left:5px solid #17ff07;
-border-right:5px solid #17ff07;
-transition: 0.6s;
-}
-.learning-note:hover{
-    transform: translateY(-5px) scale(1.02);
-}
-.learning-note h4{
-font-weight:700;
-margin-bottom:10px;
-}
-.learning-note p{
-color:#000000;
-font-size:19px;
-line-height:1.7;
-}
-/*  learing note  ---------------------------------------------*/
-
-/* my courses my courses my courses -----------------------------------------*/
-
-/*cousrse details // cousrse details //cousrse details -------------------------------------*/
-/* course image */
-.course-image img{
-border-radius:12px;
-box-shadow:0 6px 20px rgba(237, 234, 234, 0.1);
-}
-/* course info */
-.course-info{
-background:#ffffff;
-padding:30px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-}
-.course-title{
-font-weight:700;
-margin-bottom:15px;
-}
-.course-description{
-color:#000000;
-font-size:17px;
-line-height:1.7;
-}
-.course-meta p{
-margin-bottom:6px;
-}
-/* enroll button */
-.enroll-btn{
-background:#28a745;
-color:white;
-padding:10px 25px;
-font-weight:600;
-margin-top:10px;
-border-radius:8px;
-transition:0.3s;
-}
-.enroll-btn:hover{
-background:#218838;
-transform:translateY(-4px);
-}
-/* course content */
-.course-content{
-background:#ffffff;
-padding:25px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-}
-.lesson-list{
-list-style:none;
-padding:0;
-}
-.lesson-list li{
-padding:10px;
-border-bottom:1px solid #eee;
-}
-.lesson-list li:last-child{
-border-bottom:none;
+    transition:0.3s;
 }
 
+.navbar .nav-link::after{
 
-/* login login ----------------------------------------------*/
-/* الحاوية التي توسط الصفحة */
-.login-wrapper{
-    background: linear-gradient(135deg,#248a50, #16aaa8);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition:0.3s;
 }
 
-/* صندوق تسجيل الدخول */
-.login-card{
-    background: rgba(255,255,255,0.95);
-    padding:40px;
+.navbar .nav-link:hover::after{
     width:100%;
-    max-width:420px;
-    border-radius:18px;
-    box-shadow:0 15px 10px 10px rgba(0,0,0,0.3);
-    transition: 0.6s;
 }
 
-.login-card:hover{
-    transform: translateY(-5px) scale(1.02); 
-    
+.navbar .nav-link:hover{
+
+    color:var(--primary) !important;
+
+    transform:translateY(-2px);
 }
-/* العنوان */
-.login-title{
-    text-align:center;
-    margin-bottom:25px;
+
+
+/* =========================================================
+   BUTTONS
+=========================================================*/
+.my-btn,
+.btn-login,
+.enroll-btn,
+.next-btn,
+.navbar .btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    border:none;
+
+    color:#061018;
+
     font-weight:700;
-    color:#1b5e20;
+
+    border-radius:16px;
+
+    padding:13px 28px;
+
+    transition:0.4s;
+
+    box-shadow:
+    0 10px 25px rgba(56,189,248,0.2);
 }
 
-/* الحقول */
-.form-control{
-    height:45px;
-    border-radius:10px;
-    border:1px solid #ddd;
+.my-btn:hover,
+.btn-login:hover,
+.enroll-btn:hover,
+.next-btn:hover,
+.navbar .btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 20px 40px rgba(56,189,248,0.3);
 }
 
-/* زر تسجيل الدخول */
-.btn-login{
-    background:#1b5e20;
+.prev-btn{
+
+    background:#1b2830;
+
     color:white;
-    height:45px;
-    border-radius:10px;
-    font-weight:600;
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:13px 28px;
+
+    transition:0.4s;
 }
 
-.btn-login:hover{
-    background:#144d1a;
+.prev-btn:hover{
+
+    background:#2f4552;
+
+    transform:translateY(-3px);
+}
+
+.download-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #34d399,
+        #22d3ee
+    );
+
+    color:#081018;
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:13px 28px;
+
+    font-weight:700;
+
+    transition:0.4s;
+}
+
+.download-btn:hover{
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================================================
+   GLASS EFFECT BOXES
+=========================================================*/
+.card,
+.feature-box,
+.platform-box,
+.dashboard-box,
+.course-info,
+.course-content,
+.video-container,
+.lesson-list,
+.learning-note,
+.login-card,
+.jumbotron{
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+    transition:0.4s;
+}
+
+
+/* =========================================================
+   HOVER EFFECT
+=========================================================*/
+.card:hover,
+.feature-box:hover,
+.platform-box:hover,
+.dashboard-box:hover,
+.course-info:hover,
+.course-content:hover,
+.learning-note:hover,
+.jumbotron:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+}
+
+
+/* =========================================================
+   HERO / JUMBOTRON
+=========================================================*/
+.jumbotron{
+
+    padding:70px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.jumbotron::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:rgba(94,234,212,0.08);
+
+    border-radius:50%;
+
+    top:-150px;
+
+    right:-120px;
+}
+
+.jumbotron h1{
+
+    font-size:58px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+}
+
+.jumbotron p{
+
+    color:var(--text-light);
+
+    font-size:19px;
+
+    margin-bottom:30px;
+}
+
+
+/* =========================================================
+   CAROUSEL
+=========================================================*/
+.carousel-item img{
+
+    height:600px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.45);
+
+    transition:0.5s;
+}
+
+.carousel-item img:hover{
+
+    transform:scale(1.02);
+}
+
+
+/* =========================================================
+   FEATURE BOX
+=========================================================*/
+.feature-box{
+
+    padding:35px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.feature-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    background:rgba(255,255,255,0.04);
+
+    border-radius:50%;
+
+    top:-100px;
+
+    right:-100px;
+}
+
+.feature-box h3{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+.feature-box p{
+
+    color:var(--text-light);
+
+    font-size:17px;
+}
+
+
+/* =========================================================
+   CARD
+=========================================================*/
+.card{
+
+    overflow:hidden;
+
     color:white;
 }
 
-/* رابط التسجيل */
-.register-link{
+.card img{
+
+    transition:0.5s;
+}
+
+.card:hover img{
+
+    transform:scale(1.05);
+}
+
+.card-body{
+    padding:25px;
+}
+
+.card-title{
+
+    font-size:24px;
+
+    font-weight:700;
+}
+
+.card-text{
+
+    color:var(--text-light);
+}
+
+
+/* =========================================================
+   PLATFORM BOX
+=========================================================*/
+.platform-box{
+
+    padding:35px;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:var(--text-light);
+}
+
+
+/* =========================================================
+   DASHBOARD
+=========================================================*/
+.dashboard-box{
+
+    padding:40px;
+}
+
+.dashboard-title{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    margin-bottom:18px;
+}
+
+.dashboard-text{
+
+    font-size:18px;
+
+    color:var(--text-light);
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   VIDEO SECTION
+=========================================================*/
+.video-container,
+.lesson-list{
+
+    padding:25px;
+}
+
+.lesson-list{
+
+    max-height:80vh;
+
+    overflow-y:auto;
+}
+
+.lesson-item{
+
+    background:rgba(255,255,255,0.04);
+
+    padding:18px;
+
+    border-radius:16px;
+
+    margin-bottom:14px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.lesson-item:hover{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--secondary)
+    );
+
+    transform:translateX(6px);
+}
+
+.lesson-active{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#071018;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   LESSON BUTTONS
+=========================================================*/
+.lesson-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+}
+
+.btn-lesson{
+
+    flex:1;
+
+    min-width:160px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   LEARNING NOTE
+=========================================================*/
+.learning-note{
+
+    padding:35px;
+
+    max-width:95%;
+
+    margin:auto;
+}
+
+.learning-note h4{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+}
+
+.learning-note p{
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   COURSE DETAILS
+=========================================================*/
+.course-image img{
+
+    border-radius:28px;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.35);
+}
+
+.course-info,
+.course-content{
+
+    padding:35px;
+}
+
+.course-title{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+}
+
+.course-description{
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+    line-height:1.9;
+}
+
+.course-meta p{
+
+    margin-bottom:12px;
+
+    color:var(--text-light);
+}
+
+
+/* =========================================================
+   LOGIN
+=========================================================*/
+.login-wrapper{
+
+    background:
+    radial-gradient(circle at top left,#14b8a6,#081018 60%);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:20px;
+}
+
+.login-card{
+
+    width:100%;
+
+    max-width:450px;
+
+    padding:45px;
+}
+
+.login-title{
+
     text-align:center;
-    margin-top:15px;
+
+    font-size:36px;
+
+    font-weight:800;
+
+    margin-bottom:30px;
+}
+
+.form-control{
+
+    height:54px;
+
+    border-radius:16px;
+
+    border:none;
+
+    background:rgba(255,255,255,0.06);
+
+    color:white;
+
+    padding-left:16px;
+
+    margin-bottom:18px;
+}
+
+.form-control::placeholder{
+    color:#94a3b8;
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    border:1px solid var(--primary);
+
+    box-shadow:none;
+}
+
+.register-link{
+
+    text-align:center;
+
+    margin-top:20px;
 }
 
 .register-link a{
-    color:#1b5e20;
-    font-weight:600;
+
+    color:var(--primary);
+
+    font-weight:700;
 }
 
-/* login login ----------------------------------------------*/
+.register-link a:hover{
+
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   FOOTER
+=========================================================*/
+footer{
+
+    background:rgba(0,0,0,0.35);
+
+    border-top:1px solid rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(18px);
+
+    padding:60px 0;
+
+    margin-top:80px;
+}
+
+footer h4{
+
+    font-size:24px;
+
+    margin-bottom:20px;
+}
+
+footer p,
+footer a{
+
+    color:var(--text-light);
+
+    transition:0.3s;
+}
+
+footer a:hover{
+
+    color:var(--primary);
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+=========================================================*/
+
+/* =======================
+   TABLET
+=======================*/
+@media(max-width:992px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .navbar .navbar-brand{
+        font-size:28px;
+    }
+
+    .jumbotron{
+        padding:50px 35px;
+    }
+
+    .jumbotron h1{
+        font-size:44px;
+    }
+
+    .dashboard-title,
+    .course-title{
+        font-size:34px;
+    }
+
+    .carousel-item img{
+        height:450px;
+    }
+
+}
+
+
+/* =======================
+   MOBILE
+=======================*/
+@media(max-width:768px){
+
+    section{
+        padding:70px 0;
+    }
+
+    .navbar{
+
+        padding:14px 16px;
+    }
+
+    .navbar .navbar-brand{
+
+        font-size:24px;
+    }
+
+    .navbar .nav-link{
+
+        margin-top:10px;
+    }
+
+    .jumbotron{
+
+        padding:35px 22px;
+
+        text-align:center;
+    }
+
+    .jumbotron h1{
+
+        font-size:34px;
+    }
+
+    .jumbotron p{
+
+        font-size:16px;
+    }
+
+    .dashboard-title,
+    .course-title{
+
+        font-size:28px;
+    }
+
+    .dashboard-text,
+    .course-description,
+    .learning-note p{
+
+        font-size:16px;
+    }
+
+    .carousel-item img{
+
+        height:300px;
+    }
+
+    .lesson-buttons{
+
+        flex-direction:column;
+    }
+
+    .btn-lesson{
+
+        width:100%;
+    }
+
+    .login-card{
+
+        padding:35px 20px;
+    }
+
+}
+
+
+/* =======================
+   SMALL DEVICES
+=======================*/
+@media(max-width:480px){
+
+    .navbar .navbar-brand{
+
+        font-size:22px;
+    }
+
+    .jumbotron h1{
+
+        font-size:28px;
+    }
+
+    .dashboard-title,
+    .course-title{
+
+        font-size:24px;
+    }
+
+    .feature-box,
+    .card,
+    .platform-box,
+    .course-info,
+    .course-content,
+    .dashboard-box,
+    .learning-note{
+
+        border-radius:18px;
+    }
+
+    .carousel-item img{
+
+        height:230px;
+    }
+
+}
